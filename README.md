@@ -6,7 +6,7 @@
 We all know the struggle of writing meaningful commit messages after a long coding session. It's easy to default to "fixes" or "updates", but that hurts our project history and changelogs. CommitCraft solves this by using AI to generate perfectly formatted **Conventional Commits** automatically.
 
 ---
-
+[Quick access to the app](https://afa01-commit-craft.vercel.app/)
 ## What it does
 
 Instead of guessing the right type or scope, you simply provide:
