@@ -1,26 +1,144 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9f9f9;
+  --bg-tertiary: #f0f0f0;
+  --bg-input: #ffffff;
+  --text-primary: #171717;
+  --text-secondary: #444444;
+  --border-color: #e5e5e5;
+  --border-radius: 12px;
+  --padding-base: 2rem;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --primary-color: #ff4500;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --bg-primary: #111111;
+    --bg-secondary: #1a1a1a;
+    --bg-tertiary: #222222;
+    --bg-input: #262626;
+    --text-primary: #ededed;
+    --text-secondary: #a1a1a1;
+    --border-color: #333333;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.5);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.5);
+    --primary-color: #ff4d4f;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Roboto', Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.ant-form-item-label>label {
+  color: var(--text-primary) !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  font-size: 0.75rem !important;
+}
+
+.ant-input,
+input.ant-input,
+.ant-input-lg,
+.ant-input-sm,
+.ant-input-outlined,
+.ant-input-textarea,
+.ant-input-affix-wrapper,
+.ant-input-affix-wrapper>input.ant-input {
+  background-color: var(--bg-input) !important;
+  background: var(--bg-input) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+  padding: 0.8rem 1rem !important;
+  border-radius: var(--border-radius) !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px var(--bg-input) inset !important;
+  -webkit-text-fill-color: var(--text-primary) !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.ant-input-affix-wrapper {
+  background-color: var(--bg-input) !important;
+}
+
+.ant-btn-primary {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+  color: #fff !important;
+}
+
+.ant-btn-primary:hover {
+  filter: brightness(1.1);
+}
+
+.ant-btn {
+  height: auto !important;
+  padding: 0.8rem 1.5rem !important;
+  border-radius: var(--border-radius) !important;
+  font-size: 1rem !important;
+}
+
+.ant-btn-text,
+.anticon-copy {
+  color: var(--primary-color) !important;
+}
+
+.ant-btn-text:hover {
+  background-color: transparent !important;
+  filter: brightness(1.2);
+}
+
+.ant-input::placeholder,
+.ant-input-textarea::placeholder {
+  color: var(--text-secondary) !important;
+}
+
+.ant-spin-nested-loading {
+  color: var(--text-primary);
+}
+
+.ant-card {
+  background-color: var(--bg-input) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+.ant-card-head {
+  border-bottom: 1px solid var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+.ant-card-head-title {
+  color: var(--text-primary) !important;
+}
+
+.ant-card-body {
+  background-color: var(--bg-input) !important;
+  color: var(--text-primary) !important;
+}
+
+pre {
+  color: var(--text-primary);
+  font-family: inherit;
 }

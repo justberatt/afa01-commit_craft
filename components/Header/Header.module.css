@@ -1,0 +1,9 @@
+.header {
+    text-align: center;
+    padding: var(--padding-base);
+}
+
+.logo {
+    font-size: 3rem;
+    color: var(--text-primary);
+}
